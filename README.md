@@ -17,7 +17,7 @@ $ git clone https://github.com/theworstteam/cerry-express-frontend.git
 $ cd cerry-express-frontend
 ```
 
-3. Install dependencies using npm. (Ask from the developer for the ***.env*** files)
+3. Install dependencies using npm. 
 
 ```
 $ npm install
