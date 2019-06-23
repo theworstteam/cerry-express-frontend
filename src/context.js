@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Loading from './components/Loading';
 
 const ParcelContext = React.createContext();
 
@@ -9,12 +10,13 @@ class ParcelProvider extends Component {
         average_service: [],
         average_location: [],
         average_wl: [],
-        branch_car: [],
+        branch_cars: [],
         branch_staff: [],
         month: ['January','February','March','April','May','June','July','August','September','October','November','December'],
-        loading: true,
+        loading: false,
     }
     componentDidMount(){
+        this.setState({loading: true})
         this.initData()
         let {month} = this.state
         for (let index = 0; index < month.length; index++) {
@@ -70,7 +72,6 @@ class ParcelProvider extends Component {
         .then((res) => this.state.branch_staff.push(res));
     }
   
-    
     render() {
         return (
         <ParcelContext.Provider value={this.state}>
